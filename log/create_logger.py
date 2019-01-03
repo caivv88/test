@@ -16,7 +16,7 @@ class CreateLog():
         self.logger.addHandler(rf_handler)
         if log_ouput_file:  # 输出到文件
             f_handler = TimedRotatingFileHandler(
-                filename=log_ouput_file, when="S", interval=1, backupCount=0)  # midnight:凌晨滚动
+                filename=log_ouput_file, when="midnight", interval=1, backupCount=0)  # midnight:凌晨滚动
             # f_handler.suffix = "%Y%m%d%H%M%S.log"
             f_handler.setFormatter(logging.Formatter(format1))
             self.logger.addHandler(f_handler)
